@@ -7,7 +7,10 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "inlineStyle": true,
+          "skipTests": false,
+          "standalone": true
         }
       },
       "root": "",
@@ -94,8 +97,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "agenda:build:production",
+              "serveTarget": "agenda:serve:production"
+            },
+            "development": {
+              "buildTarget": "agenda:build:development",
+              "serveTarget": "agenda:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "facilite-agenda": {
+      "hosting": {
+        "agenda": [
+          "facilite-agenda"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "facilite-agenda"
+  }
+}
