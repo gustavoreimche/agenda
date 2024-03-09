@@ -1,1 +1,4 @@
-<div>{{schedules$ | async | json}}</div>
+<main class="sm:px-3">
+  <app-header></app-header>
+  <app-schedule-table [schedules]="schedules"></app-schedule-table>
+</main>

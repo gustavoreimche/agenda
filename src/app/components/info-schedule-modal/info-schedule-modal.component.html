@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <div class="flex flex-column gap-3">
+    <div class="flex flex-column">
+      <label for="client">Cliente</label>
+      <input
+        pInputText
+        id="client"
+        name="client"
+        formControlName="client"
+      />
+    </div>
+    <div class="flex flex-column">
+      <label for="serviceExecuted">Serviço</label>
+      <input
+        pInputText
+        id="serviceExecuted"
+        name="serviceExecuted"
+        formControlName="serviceExecuted"
+      />
+    </div>
+    <div class="flex flex-column">
+      <label for="value">Valor:</label>
+      <p-inputNumber
+        formControlName="value"
+        styleClass="w-full"
+        inputId="value"
+        mode="currency"
+        currency="BRL"
+        locale="pt-BR"
+      >
+      </p-inputNumber>
+    </div>
+  </div>
+  <div class="flex justify-content-between mt-3">
+    <p-button label="Excluir" severity="danger" (click)="delete()"></p-button>
+    <p-button
+      label="Salvar"
+      styleClass="m-0"
+      severity="success"
+      (click)="save()"
+    ></p-button>
+  </div>
+</form>

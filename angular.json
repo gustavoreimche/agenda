@@ -9,9 +9,12 @@
         "@schematics/angular:component": {
           "style": "scss",
           "inlineStyle": true,
-          "skipTests": false,
+          "skipTests": true,
           "standalone": true
         }
+      },
+      "i18n": {
+        "sourceLocale": "pt-BR"
       },
       "root": "",
       "sourceRoot": "src",
@@ -33,6 +36,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -42,8 +46,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -93,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []

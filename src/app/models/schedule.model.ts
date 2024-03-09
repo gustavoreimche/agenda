@@ -1,13 +1,13 @@
-import { MyDate } from '../utils/MyDate';
+import { User } from '@angular/fire/auth';
 import { FormaPag } from './payment.enum';
-import { User } from './user.model';
 
 export interface ISchedule {
   id?: string;
   date: string | Date;
+  hour: string;
   client: string;
   serviceExecuted: string;
-  value: number;
+  value: number | null;
   payment?: FormaPag;
   user?: User;
 }
