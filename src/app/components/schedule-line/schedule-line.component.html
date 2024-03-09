@@ -2,10 +2,10 @@
   class="flex justify-content-between border-bottom-1 border-black-alpha-30 py-1 mx-3 gap-1"
 >
   <span class="mr-2">{{ schedule.hour }}</span>
-  <div class="w-12 sm:w-4" (click)="openInfo()">{{ schedule.client }}</div>
-  <app-separator class="hidden sm:block" />
+  <div class="w-6 sm:w-4 white-space-nowrap overflow-hidden text-overflow-ellipsis" (click)="openInfo()">{{ schedule.client }}</div>
+  <app-separator />
   <div
-    class="hidden sm:block w-5 text-center white-space-nowrap overflow-hidden text-overflow-ellipsis"
+    class="w-6 sm:w-5 text-center white-space-nowrap overflow-hidden text-overflow-ellipsis"
   >
     {{ schedule.serviceExecuted }}
   </div>

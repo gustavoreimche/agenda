@@ -1,31 +1,33 @@
-<header class="flex justify-content-between align-items-center px-4 py-2">
+<header class="flex justify-content-between align-items-center px-2 pb-4 pt-1">
   <div class="flex flex-column w-3">
-    <span class="sofia text-3xl line-height-1">{{
+    <span class="sofia text-3xl sm:text-5xl line-height-1">{{
       monthNames[date.getMonth()]
     }}</span>
-    <span>{{ dayNames[date.getDay()] }}</span>
+    <span class="text-lg sm:text-xl">{{ dayNames[date.getDay()].toLocaleUpperCase() }}</span>
   </div>
   <div
-    class="flex w-7 text-center text-3xl align-items-center justify-content-center"
+    class="flex w-7 text-center align-items-center justify-content-center"
   >
     <p-button
       icon="pi pi-chevron-left"
       [rounded]="true"
       [text]="true"
-      severity="secondary"
+      styleClass="text-black-alpha-90"
       (onClick)="date.setDate(date.getDate() - 1); dateChange()"
     ></p-button>
-    <span class="px-4" (click)="visible = true">{{ date.getDate() }}</span>
+    <span class="px-2 sm:px-4 font-bold text-5xl sm:text-6xl" (click)="visible = true">{{
+      date.getDate()
+    }}</span>
     <p-button
       icon="pi pi-chevron-right"
       [rounded]="true"
       [text]="true"
-      severity="secondary"
+      styleClass="text-black-alpha-90"
       (onClick)="date.setDate(date.getDate() + 1); dateChange()"
     ></p-button>
   </div>
   <div class="w-3 text-right" (click)="menu.toggle($event)">
-    <i class="pi pi-bars"></i>
+    <i class="pi pi-bars text-3xl font-bold"></i>
   </div>
 </header>
 <p-menu #menu [model]="menuList" [popup]="true"></p-menu>
