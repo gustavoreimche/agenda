@@ -19,6 +19,7 @@
         </div>
 
         <button pButton pRipple label="Login" icon="pi pi-user" class="w-full" type="submit" [disabled]="form.invalid"></button>
+        <google-btn class="w-full mt-4" (click)="loginWithGoogle($event)" />
     </form>
   </div>
 </section>

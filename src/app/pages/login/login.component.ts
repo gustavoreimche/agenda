@@ -5,11 +5,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { GoogleBtnComponent } from '../../components/google-btn/google-btn.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [PasswordModule, CheckboxModule, InputTextModule, ButtonModule, ReactiveFormsModule],
+  imports: [PasswordModule, CheckboxModule, InputTextModule, ButtonModule, ReactiveFormsModule, GoogleBtnComponent],
   templateUrl: './login.component.html',
   styles: ``,
 })
@@ -24,5 +25,10 @@ export class LoginComponent {
   login() {
     const { email, password } = this.form.getRawValue();
     if (email && password) this.auth.login(email, password);
+  }
+
+  loginWithGoogle(event: any) {
+    event.preventDefault();
+    this.auth.loginWithGoogle();
   }
 }

@@ -56,32 +56,6 @@ export class HomeComponent {
       this.date = date;
       this.getSchedulesByDate();
     });
-    // bck.forEach((item) => {
-    //   const year = item.year || 0; // Defina um valor padrão se year for nulo ou indefinido
-    //   const month = item.month || 1; // Defina um valor padrão se month for nulo ou indefinido
-    //   const day = item.day || 1; // Defina um valor padrão se day for nulo ou indefinido
-
-    //   // Verifique se os valores de ano, mês e dia são válidos
-    //   if (year >= 2024 && month >= 0 && month <= 12 && day >= 1 && day <= 31) {
-    //     const date = new Date(
-    //       `${year}-${(month+1).toString().padStart(2, '0')}-${day
-    //         .toString()
-    //         .padStart(2, '0')}T12:00:00Z`
-    //     );
-    //     const payload = {
-    //       date: date.toISOString(),
-    //       hour: item.hora,
-    //       client: item.nome,
-    //       serviceExecuted: item.servico,
-    //       value: item.valor,
-    //     };
-    //     console.log('=> ', payload.date);
-    //     this._service.create(payload).subscribe();
-    //   } else {
-    //     console.error('Invalid date values:', item);
-    //   }
-    // });
-    // console.log('END');
   }
 
   getSchedulesByDate() {
